@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Website Layout</title>
+    <style>
+        * {
+         box-sizing: border-box;
+        }
+        body{
+            margin:0;
+        }
+        .header{
+          background-color: lightcoral;
+          text-align: center;
+          font-size: 30px;
+          padding: 20px;
+        }
+        div p{
+            text-align: center;
+            font-size: 25px;
+        }
+        .navbar{
+          overflow: hidden;
+          background-color: lightgreen;
+        }
+        .navbar a{
+            float:left;
+            display: block;
+            font-size: 25px;
+            text-decoration: none;
+            padding:20px 24px;
+            color:teal;
+            text-align: center;
+        }
+        .navbar a:hover{
+            background-color: violet;
+            color: wheat;
+            font-style: italic;
+        }
+        /* Create two unequal columns that floats next to each other */
+        .left-column{
+         float:left;
+         width: 75%;
+         background-color: lightcyan;
+        }
+       .rightcolumn{
+        float:left;
+        width: 25%;
+        background-color: lightblue;
+        padding-left: 20px;
+       }
+       .deeplearn{
+           background-color: lightslategray;
+           width:100%;
+           padding:20px;
+       }
+       .card{
+         background-color: white;
+         padding:20px;
+         margin-top: 20px;
+       }
+
+       /* clear floats after the columns*/
+       .row::after{
+           content:"";
+           display: table;
+           clear:both;
+       }
+       .riyadpic{
+           display: block;
+            float:left;
+       }
+
+     /* FOOTER*/
+        .footer{
+            background-color: yellowgreen;
+            font-size: 15px;
+            font-style: oblique;
+            text-align: center;
+            padding: 20px;
+            margin-top: 50px;
+
+        }
+
+        /* Responsive layout when the screen is less than 800px wide make the two columns stack on top of each other instead of next to each other.*/
+        @media screen and(max-width: 800px;) {
+            .left-column, .rightcolumn{
+                width: 100%;
+                padding:0;
+            }
+        }
+      /* Responsive layout when the screen is less than 400px wide make the two navigation links stack on top of each other instead of next to each other*/
+      @media screen  and (max-width: 400px;){
+          .navbar{
+              float:none;
+              width: 100%;
+          }
+      } 
+
+    </style>
+</head>
+<body>
+  <div>
+      <div class = "header">
+          <h1>My First Website</h1>
+          <div><p>Resize the browser window to see the effect</p></div>
+      </div>
+  </div>
+  <div class = "navbar">
+      <a href ="#"> Home </a>
+      <a href="#">Blog</a>
+      <a href = "#">Data Science</a>
+      <a href="#">IoT</a>
+      <a href = "#" style = "float:right"> Contact Us</a>
+  </div>
+  <div class = "row">
+      <div class = left-column>
+          <div class = "card">
+            <h2>Data science Is the Popular course</h2>
+            <h5> title description, dec 7 , 2017</h5>
+            <div class = "dataimg" style = "height:200px;"><img src="dataimg.jpeg" alt = "It is data picture"></div>
+            <p>Some text...</p>
+            <p>As the term suggests this is the process of dividing an image into multiple segments. In this process, every pixel in the image is associated with an object type. There are two major types of image segmentation — semantic segmentation and instance segmentation.</p>
+          </div>
+          <div class = "card">
+              <h2>Why not Data science???</h2>
+              <h5>title description sep 2 , 2019</h5>
+              <div class = "secondimg" style="height:150px;"><img src = "seconddata.jpeg" alt = "It is second Data picture"></div>
+              <p>Explain second picture</p>
+              <p>As the term suggests this is the process of dividing an image into multiple segments. In this process, every pixel in the image is associated with an object type. There are two major types of image segmentation — semantic segmentation and instance segmentation.</p>
+          </div>
+      </div>
+      
+     <div class="rightcolumn">
+       <div class = "card">
+           <h2>About me</h2>
+           <div class = "riyadpic" style = "height:5px width:10px"><img src = " " alt = "riyad pic"> </div>
+            <p> some text about me in culpa qui officia deserunt mollit anim</p>
+       </div>
+
+    <div class = "card">
+        <h3>Popular post</h3>
+        <div class = "deeplearN"><p>Deep Learning pic</p>
+       <img src ="" alt = "deep learning "></div>
+       <div class = "deeplearn"><p>Deep seconf pic</p><img src = "" alt = "deep second pic"></div>
+    </div>
+      <div class = "card">
+      <h3>Follow me</h3>
+      <p>Some text....</p>
+      </div>  
+     </div>
+  </div>
+
+  <div class = "footer">
+      <h2>@Riyad Islam tech solutions . 2020</h2>
+      <br>
+      <address>Chawkbazar , Chittagong</address>
+  </div>
+</body>
+</html>
